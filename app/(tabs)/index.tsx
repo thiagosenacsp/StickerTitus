@@ -1,11 +1,12 @@
-import { View, StyleSheet } from "react-native";
-import ImageViewer from "@/components/ImageViewer";
-import Button from "@/components/Button";
-import * as ImagePicker from "expo-image-picker";
 import { useState } from "react";
-import IconButton from "@/components/IconButton";
+import { View, StyleSheet } from "react-native";
+import * as ImagePicker from "expo-image-picker";
+
+import Button from "@/components/Button";
 import CircleButton from "@/components/CircleButton";
 import EmojiPicker from "@/components/EmojiPicker";
+import IconButton from "@/components/IconButton";
+import ImageViewer from "@/components/ImageViewer";
 
 const PlaceholderImage = require("@/assets/images/background-image.jpg");
 
@@ -38,10 +39,10 @@ export default function Index() {
   const onAddSticker = () => {
     setIsModalVisible(true);
   };
-  
+
   const onModalClose = () => {
     setIsModalVisible(false);
-  }
+  };
 
   const onSaveImageAsync = async () => {};
 
@@ -79,7 +80,10 @@ export default function Index() {
           />
         </View>
       )}
-      <EmojiPicker isVisible={isModalVisible} onClose={onModalClose}></EmojiPicker>
+      <EmojiPicker
+        isVisible={isModalVisible}
+        onClose={onModalClose}
+      ></EmojiPicker>
     </View>
   );
 }
